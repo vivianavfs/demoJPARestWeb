@@ -18,7 +18,7 @@ public class ArtController {
     }
 
     @GetMapping("/top-arts")
-    @CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:8100","http://localhost:8080"})
     public Collection<Art> topArts() {
         return repository.findAll().stream()
                 .filter(this::top)
@@ -26,6 +26,6 @@ public class ArtController {
     }
 
     public boolean top(Art art) {
-        return art.getName().equals("Monalisa");
+        return art.getName().equals("Mona Lisa");
     }
 }
