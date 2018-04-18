@@ -5,8 +5,6 @@ import com.example.demo.repository.ArtRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.stream.Stream;
-
 @Component
 public class ArtCommandLineRunner implements CommandLineRunner {
 
@@ -17,11 +15,15 @@ public class ArtCommandLineRunner implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
-        repository.save(new Art("Mona Lisa","Leonardo da Vinci","monalisa.jpg"));
-        repository.save(new Art("Moça com o Brinco de Pérola","Johannes Vermeer","brinco-perola.jpg"));
-        repository.save(new Art("A Noite Estrelada","Vincent van Gogh","noite-estrelada.jpg"));
+        repository.save(new Art("Mona Lisa","Leonardo da Vinci","monalisa.jpg", 1));
+        repository.save(new Art("Moça com o Brinco de Pérola","Johannes Vermeer","brinco-perola.jpg", 2));
+        repository.save(new Art("A Noite Estrelada","Vincent van Gogh","noite-estrelada.jpg",3));
+        repository.save(new Art("O baile no moulin de la Galette","Pierre-Auguste Renoir","baile-moulin.jpg",4));
+        repository.save(new Art("A Ronda Noturna","Rembrandt","ronda-noturna.jpg",5));
+        repository.save(new Art("A Última Ceia","Leonardo da Vinci","ultima-ceia.jpg",6));
+        repository.save(new Art("Arranjo em Cinza e Preto nº1","James McNeill Whistler","arranjo-cinza-preto.jpg",7));
 
         repository.findAll().forEach(System.out::println);
 

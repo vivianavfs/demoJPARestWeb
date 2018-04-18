@@ -25,7 +25,7 @@ public class ArtController {
                 .collect(Collectors.toList());
     }
 
-    public boolean top(Art art) {
-        return art.getName().equals("Mona Lisa");
+    private boolean top(Art art) {
+        return art.getRaking() <= 3;
     }
 }

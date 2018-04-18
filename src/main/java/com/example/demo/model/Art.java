@@ -12,19 +12,17 @@ public class Art {
     @GeneratedValue
     private Long id;
     private String name;
-    private String artist = null;
-    private String imagePath = null;
+    private String artist;
+    private String imagePath;
+    private int raking;
 
     public Art() { }
 
-    public Art(String name) {
-        this.name = name;
-    }
-
-    public Art(String name, String artist, String imagePath) {
+    public Art(String name, String artist, String imagePath, int raking) {
         this.name = name;
         this.artist = artist;
         this.imagePath = imagePath;
+        this.raking = raking;
     }
 
     public Long getId() {
@@ -59,6 +57,14 @@ public class Art {
         this.artist = artist;
     }
 
+    public int getRaking() {
+        return raking;
+    }
+
+    public void setRaking(int raking) {
+        this.raking = raking;
+    }
+
     @Override
     public String toString() {
         return "Art{" +
@@ -66,6 +72,7 @@ public class Art {
                 ", name='" + name + '\'' +
                 ", artist='" + artist + '\'' +
                 ", imagePath='" + imagePath + '\'' +
+                ", raking=" + raking +
                 '}';
     }
 
