@@ -13,16 +13,16 @@ public class Art {
     private Long id;
     private String name;
     private String artist;
-    private String imagePath;
-    private int raking;
+    private String imageURL;
+    private int ranking;
 
     public Art() { }
 
-    public Art(String name, String artist, String imagePath, int raking) {
+    public Art(String name, String artist, String imageURL, int ranking) {
         this.name = name;
         this.artist = artist;
-        this.imagePath = imagePath;
-        this.raking = raking;
+        this.imageURL = imageURL;
+        this.ranking = ranking;
     }
 
     public Long getId() {
@@ -41,12 +41,12 @@ public class Art {
         this.name = name;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getimageURL() {
+        return imageURL;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setimageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public String getArtist() {
@@ -57,12 +57,12 @@ public class Art {
         this.artist = artist;
     }
 
-    public int getRaking() {
-        return raking;
+    public int getRanking() {
+        return ranking;
     }
 
-    public void setRaking(int raking) {
-        this.raking = raking;
+    public void setRanking(int ranking) {
+        this.ranking = ranking;
     }
 
     @Override
@@ -71,8 +71,8 @@ public class Art {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", artist='" + artist + '\'' +
-                ", imagePath='" + imagePath + '\'' +
-                ", raking=" + raking +
+                ", imageURL='" + imageURL + '\'' +
+                ", ranking=" + ranking +
                 '}';
     }
 
