@@ -20,13 +20,7 @@ public class ArtController {
     @GetMapping("/top-arts")
 	@CrossOrigin(origins = {"http://localhost:8100","http://localhost:8080"})
     public Collection<Art> topArts() {
-        return repository.findAll().stream()
-                .filter(this::top)
-                .collect(Collectors.toList());
-    }
-
-    private boolean top(Art art) {
-        return art.getRanking() <= 10;
+        return repository.findTop10ByOrderByRankingAsc();
     }
 
 }
